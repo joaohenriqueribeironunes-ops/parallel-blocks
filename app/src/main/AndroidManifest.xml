@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".ParaDownApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ParaDown"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.ParaDown">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".capture.CaptureActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/capture_activity_label"
+            android:theme="@style/Theme.ParaDown">
+
+            <intent-filter android:label="@string/capture_activity_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" android:host="*" android:pathSuffix=".apk" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".apk" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".zip" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".zip" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".7z" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".7z" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".rar" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".rar" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".tar" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".tar" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".gz" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".gz" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".pdf" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".pdf" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".docx" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".docx" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".xlsx" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".xlsx" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".pptx" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".pptx" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".epub" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".epub" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".mp4" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".mp4" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".mkv" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".mkv" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".mp3" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".mp3" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".iso" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".iso" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".bin" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".bin" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".exe" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".exe" />
+                <data android:scheme="http" android:host="*" android:pathSuffix=".msi" />
+                <data android:scheme="https" android:host="*" android:pathSuffix=".msi" />
+            </intent-filter>
+
+            <intent-filter android:label="@string/capture_activity_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:mimeType="application/vnd.android.package-archive" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-7z-compressed" />
+                <data android:mimeType="application/vnd.rar" />
+                <data android:mimeType="application/x-rar-compressed" />
+                <data android:mimeType="application/gzip" />
+                <data android:mimeType="application/x-tar" />
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="application/msword" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                <data android:mimeType="application/vnd.ms-excel" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                <data android:mimeType="application/vnd.ms-powerpoint" />
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation" />
+                <data android:mimeType="application/epub+zip" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/x-matroska" />
+                <data android:mimeType="audio/mpeg" />
+                <data android:mimeType="application/x-iso9660-image" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+
+            <intent-filter android:label="@string/capture_activity_label">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.DownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync"
+            android:stopWithTask="false" />
+
+    </application>
+
+</manifest>
